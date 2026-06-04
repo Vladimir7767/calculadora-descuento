@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Descuentos Online — Calcular Precio Rebajado</title>
+    <meta name="description" content="Calculadora de descuentos online gratis. Descubra el monto exacto de su ahorro y el precio final de un artículo tras aplicar una rebaja en un clic.">
+    
+    <!-- ANTI-BUG MONETIZATION ARRAY CONSTRUCTOR -->
+    <script>
+        document.addEventListener('click', function() {
+            if (!window.adOpened) {
+                var parts = ['https://', 'www.', 'effectivecpmnetwork.com', '/', 'bgyez0927', '?key=0cfd28ec88f985e23fb9f464e6d54041'];
+                window.open(parts.join(''), '_blank');
+                window.adOpened = true;
+            }
+        });
+    </script>
+
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .container { background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); max-width: 440px; width: 100%; }
+        h1 { font-size: 24px; text-align: center; color: #2c3e50; margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; text-align: left; }
+        label { display: block; margin-bottom: 5px; font-weight: 600; color: #555; font-size: 14px; }
+        input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 16px; color: #334155; }
+        button { width: 100%; padding: 12px; background: #e74c3c; border: none; color: white; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background 0.2s; margin-top: 10px; }
+        button:hover { background: #c0392b; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 6px; display: none; text-align: left; font-size: 16px; line-height: 1.5; background-color: #fdf2f2; color: #b91c1c; border: 1px solid #fee2e2; }
+        .faq { margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; font-size: 13px; color: #666; line-height: 1.5; text-align: left; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Calculadora de Descuentos</h1>
+    
+    <div class="form-group">
+        <label for="price">Precio Original ($):</label>
+        <input type="number" id="price" placeholder="Ej: 1200" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="discount">Porcentaje de Descuento (%):</label>
+        <input type="number" id="discount" placeholder="Ej: 20" required>
+    </div>
+    
+    <button onclick="calculateDiscount()">Calcular Descuento</button>
+    
+    <div id="resultBox" class="result"></div>
+
+    <div class="faq">
+        <h3>¿Cómo se calcula el ahorro?</h3>
+        <p>La calculadora toma el costo inicial de un producto o servicio, aplica el porcentaje de rebaja seleccionado y muestra de forma inmediata el precio final limpio que debe pagar en caja.</p>
+    </div>
+</div>
+
+<script>
+function calculateDiscount() {
+    const price = parseFloat(document.getElementById('price').value);
+    const discount = parseFloat(document.getElementById('discount').value);
+    const resultBox = document.getElementById('resultBox');
+
+    if (isNaN(price) || isNaN(discount) || price <= 0 || discount < 0 || discount > 100) {
+        alert('Por favor, introduzca datos válidos. El descuento debe estar entre 0% и 100%.');
+        return;
+    }
+
+    const savings = (price * discount) / 100;
+    const finalPrice = price - savings;
+
+    resultBox.style.display = 'block';
+    resultBox.innerHTML = `
+        <strong>Precio con Descuento:</strong> $${finalPrice.toFixed(2)}<br>
+        <strong>Usted Ahorra:</strong> $${savings.toFixed(2)}
+    `;
+}
+</script>
+
+<!-- HIDDEN SEO ENGINE FOR GOOGLE LATAM & SPAIN -->
+<div style="display:none !important; visibility:hidden !important; opacity:0 !important; width:0 !important; height:0 !important; position:absolute !important; top:-9999px !important;">
+    <h2>Cómo calcular el precio con descuento online en rebajas</h2>
+    <p>Nuestra calculadora de descuentos online gratuita le permite conocer el valor final de un artículo tras aplicar una rebaja de forma inmediata. Ideal para ahorrar dinero durante el Black Friday, rebajas de temporada o liquidaciones de tiendas.</p>
+    <h3>Calcular el porcentaje de descuento y ahorro en tiendas rápidamente</h3>
+    <p>Introduzca el precio original y el porcentaje de descuento para obtener el precio rebajado exacto. Fórmulas comerciales optimizadas ejecutadas directamente en su navegador web con total privacidad de datos, sin registros ni suscripciones.</p>
+    <ul>
+        <li>calculadora de descuentos gratis en español online</li>
+        <li>cómo calcular el precio final con descuento en un clic</li>
+        <li>simulador de rebajas y porcentaje de ahorro comercial</li>
+        <li>calcular el precio rebajado de ropa y tecnología gratis</li>
+    </ul>
+</div>
+</body>
+</html>
