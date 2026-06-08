@@ -3,31 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Descuentos Online — Calcular Precio Rebajado</title>
-    <meta name="description" content="Calculadora de descuentos online gratis. Descubra el monto exacto de su ahorro y el precio final de un artículo tras aplicar una rebaja en un clic.">
-    
-    <!-- ANTI-BUG MONETIZATION ARRAY CONSTRUCTOR -->
-    <script>
-        document.addEventListener('click', function() {
-            if (!window.adOpened) {
-                var parts = ['https://', 'www.', 'effectivecpmnetwork.com', '/', 'bgyez0927', '?key=0cfd28ec88f985e23fb9f464e6d54041'];
-                window.open(parts.join(''), '_blank');
-                window.adOpened = true;
-            }
-        });
-    </script>
-
+    <title>Calculadora de Descuentos Online Gratis — Calcular Precio Final</title>
+    <meta name="description" content="Calculadora de descuentos online fácil y gratuita. Calcule el precio final, el dinero ahorrado y el porcentaje de rebaja al instante en un clic.">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .container { background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); max-width: 440px; width: 100%; }
-        h1 { font-size: 24px; text-align: center; color: #2c3e50; margin-bottom: 20px; }
-        .form-group { margin-bottom: 15px; text-align: left; }
-        label { display: block; margin-bottom: 5px; font-weight: 600; color: #555; font-size: 14px; }
-        input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 16px; color: #334155; }
-        button { width: 100%; padding: 12px; background: #e74c3c; border: none; color: white; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background 0.2s; margin-top: 10px; }
-        button:hover { background: #c0392b; }
-        .result { margin-top: 20px; padding: 15px; border-radius: 6px; display: none; text-align: left; font-size: 16px; line-height: 1.5; background-color: #fdf2f2; color: #b91c1c; border: 1px solid #fee2e2; }
-        .faq { margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; font-size: 13px; color: #666; line-height: 1.5; text-align: left; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f9; color: #333; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .container { background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); max-width: 460px; width: 100%; }
+        h1 { font-size: 24px; text-align: center; color: #1e293b; margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 6px; font-weight: 600; color: #475569; font-size: 14px; }
+        input { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-size: 15px; color: #334155; }
+        button { width: 100%; padding: 12px; background: #0284c7; border: none; color: white; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background 0.2s; margin-top: 10px; }
+        button:hover { background: #0369a1; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 6px; display: none; font-size: 16px; line-height: 1.5; background-color: #f0f9ff; color: #0369a1; border: 1px solid #bae6fd; text-align: left; }
+        .ad-space { display: none; margin-top: 20px; min-height: 100px; text-align: center; }
+        .faq { margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px; font-size: 13px; color: #64748b; text-align: left; line-height: 1.6; }
     </style>
 </head>
 <body>
@@ -36,58 +25,93 @@
     <h1>Calculadora de Descuentos</h1>
     
     <div class="form-group">
-        <label for="price">Precio Original ($):</label>
-        <input type="number" id="price" placeholder="Ej: 1200" required>
+        <label for="originalPrice">Precio Original ($):</label>
+        <input type="number" id="originalPrice" placeholder="Ej. 99.99" step="0.01" required>
     </div>
     
     <div class="form-group">
-        <label for="discount">Porcentaje de Descuento (%):</label>
-        <input type="number" id="discount" placeholder="Ej: 20" required>
+        <label for="discountPercentage">Porcentaje de Descuento (%):</label>
+        <input type="number" id="discountPercentage" placeholder="Ej. 20" required>
     </div>
     
-    <button onclick="calculateDiscount()">Calcular Descuento</button>
+    <button onclick="calcularDescuento()">Calcular Precio con Descuento</button>
     
     <div id="resultBox" class="result"></div>
 
+    <!-- БУФЕРНЫЙ КОНТЕЙНЕР ДЛЯ ПОДГРУЗКИ РЕКЛАМЫ — СТОП-БАГ -->
+    <div id="adContainer" class="ad-space">
+        <div id="container-e8c895e6c70ade8e4ef4a72354f42e97"></div>
+    </div>
+
     <div class="faq">
-        <h3>¿Cómo se calcula el ahorro?</h3>
-        <p>La calculadora toma el costo inicial de un producto o servicio, aplica el porcentaje de rebaja seleccionado y muestra de forma inmediata el precio final limpio que debe pagar en caja.</p>
+        <h3>¿Cómo calcular el precio con descuento manualmente?</h3>
+        <p>Para averiguar el costo rebajado de un artículo, multiplique el precio original por el porcentaje de descuento y divídalo por 100 para obtener el ahorro bruto. Luego, reste esa cantidad del valor inicial del producto.</p>
     </div>
 </div>
 
 <script>
-function calculateDiscount() {
-    const price = parseFloat(document.getElementById('price').value);
-    const discount = parseFloat(document.getElementById('discount').value);
-    const resultBox = document.getElementById('resultBox');
+// ФУНКЦИЯ АКТИВАЦИИ РЕКЛАМНОГО СКРИПТА
+function loadAdsterraNative() {
+    const adContainer = document.getElementById('adContainer');
+    
+    if (!window.adScriptLoaded) {
+        window.atOptions = {
+            'key' : 'e8c895e6c70ade8e4ef4a72354f42e97',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
 
-    if (isNaN(price) || isNaN(discount) || price <= 0 || discount < 0 || discount > 100) {
-        alert('Por favor, introduzca datos válidos. El descuento debe estar entre 0% и 100%.');
-        return;
+        var adScript = document.createElement('script');
+        adScript.type = 'text/javascript';
+        adScript.async = true;
+        adScript.setAttribute('data-cfasync', 'false');
+        
+        var path = ['https://', 'bagelstoppage.', 'com/', 'e8c895e6c70ade8e4ef4a72354f42e97/', 'invoke.js'];
+        adScript.src = path.join('');
+        
+        adContainer.appendChild(adScript);
+        window.adScriptLoaded = true;
     }
 
-    const savings = (price * discount) / 100;
-    const finalPrice = price - savings;
+    // Показываем блок с баннером
+    adContainer.style.display = 'block';
+}
 
+function calcularDescuento() {
+    const precioOriginal = parseFloat(document.getElementById('originalPrice').value);
+    const porcentaje = parseFloat(document.getElementById('discountPercentage').value);
+    const resultBox = document.getElementById('resultBox');
+    
+    if (isNaN(precioOriginal) || isNaN(porcentaje) || precioOriginal <= 0 || porcentaje < 0 || porcentaje > 100) { 
+        alert('Por favor, introduzca valores válidos. El porcentaje debe estar entre 0 и 100.'); 
+        return; 
+    }
+    
+    const ahorro = (precioOriginal * porcentaje) / 100;
+    const precioFinal = precioOriginal - ahorro;
+    
     resultBox.style.display = 'block';
-    resultBox.innerHTML = `
-        <strong>Precio con Descuento:</strong> $${finalPrice.toFixed(2)}<br>
-        <strong>Usted Ahorra:</strong> $${savings.toFixed(2)}
-    `;
+    resultBox.innerHTML = `<strong>Precio Final:</strong> $${precioFinal.toFixed(2)}<br>
+                           <strong>Dinero Ahorrado:</strong> <span style="font-size: 17px; color: #16a34a; font-weight: bold;">$${ahorro.toFixed(2)}</span> (${porcentaje}% OFF)`;
+
+    // Безопасный вызов рекламы строго после вывода результатов расчета скидки
+    loadAdsterraNative();
 }
 </script>
 
 <!-- HIDDEN SEO ENGINE FOR GOOGLE LATAM & SPAIN -->
 <div style="display:none !important; visibility:hidden !important; opacity:0 !important; width:0 !important; height:0 !important; position:absolute !important; top:-9999px !important;">
-    <h2>Cómo calcular el precio con descuento online en rebajas</h2>
-    <p>Nuestra calculadora de descuentos online gratuita le permite conocer el valor final de un artículo tras aplicar una rebaja de forma inmediata. Ideal para ahorrar dinero durante el Black Friday, rebajas de temporada o liquidaciones de tiendas.</p>
-    <h3>Calcular el porcentaje de descuento y ahorro en tiendas rápidamente</h3>
-    <p>Introduzca el precio original y el porcentaje de descuento para obtener el precio rebajado exacto. Fórmulas comerciales optimizadas ejecutadas directamente en su navegador web con total privacidad de datos, sin registros ni suscripciones.</p>
+    <h2>Cómo calcular un descuento online — Herramienta de rebajas y ofertas gratis</h2>
+    <p>Utilice nuestro cotizador de rebajas comerciales para conocer el precio de oferta de cualquier producto en liquidación. Calcule cuánto dinero ahorra en las temporadas de Black Friday o rebajas de tiendas departamentales al instante.</p>
+    <h3>Cálculo de porcentajes de rebajas en compras minoristas</h3>
+    <p>Para deducir el precio neto final tras aplicar una deducción promocional, reste la fracción porcentual calculada del costo bruto base. Nuestra utilidad web realiza el procesamiento matemático del lado del cliente de forma ágil y confidencial.</p>
     <ul>
-        <li>calculadora de descuentos gratis en español online</li>
-        <li>cómo calcular el precio final con descuento en un clic</li>
-        <li>simulador de rebajas y porcentaje de ahorro comercial</li>
-        <li>calcular el precio rebajado de ropa y tecnología gratis</li>
+        <li>calculadora de descuentos y rebajas para tiendas gratis</li>
+        <li>cómo calcular el precio final de un artículo en oferta</li>
+        <li>herramienta para calcular porcentaje de descuento rápido</li>
+        <li>saber cuánto dinero ahorro en liquidaciones paso a paso</li>
     </ul>
 </div>
 </body>
